@@ -1,31 +1,35 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
-const port = process.env.EXPRESS_PORT || 3000;
 const session = require('express-session');
 const passport = require('passport');
-const discordStrategy = require('./strategies/discord');
+const database = require('./database/connection');
+const chalk = require('chalk');
+const DiscordStrategy = require('./strategies/discord'); // Import the Discord strategy.
+const { Auth, Dashboard } = require('./routes'); // Import all routes.
 
-// Routes
-const AuthRoute = require('./routes/auth');
+const app = express();
+const port = process.env.EXPRESS_PORT || 3000;
 
 app.use(session({
-  secret: 'a62e2c6a-e64d-49a8-9ae1-c8809e28f83c',
-  cookie: {
-    maxAge: 86400000 // 1 day
-  },
-  
-  saveUninitialized: false
-}))
+  secret: '0801a3d6-8999-4844-8184-b65523b1ffc4',
+  cookie: { maxAge: 60000 * 60 * 24 },
+  saveUninitialized: false,
+  name: 'Discord.OAuth2'
+}));
 
+// Passports
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Middleware Routes
-app.use('/auth', AuthRoute);
+// Routes
+app.use('/auth', Auth);
+app.use('/dashboard', Dashboard);
 
 // Start
 app.listen(port, () => {
   console.clear();
-  console.log(`Rodando na porta: ${port}`);
+  console.log(`${chalk.bold.greenBright('[!]')} The application is online.`);
+  database.then(() => {
+    console.log(`${chalk.bold.greenBright('[!]')} Connected to the database ${chalk.magenta.bold(process.env.MONGO_DBNAME)} via MongoDB.\n`);
+  }).catch(err => console.log(err));
 });

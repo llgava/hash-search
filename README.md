@@ -1,0 +1,15 @@
+## .env
+```dotenv
+# Express
+EXPRESS_PORT=3000
+
+# Discord Application API
+CLIENT_ID=
+CLIENT_SECRET=
+CLIENT_REDIRECT=
+
+# MongoDB
+MONGO_USERNAME=
+MONGO_PASSWORD=
+MONGO_DBNAME=
+```
