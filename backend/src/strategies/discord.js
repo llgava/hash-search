@@ -9,7 +9,8 @@ passport.serializeUser((user, done) => {
 
 // Check if the user already exists on database.
 passport.deserializeUser(async (id, done) => {
-  if(findUserByID) done(null, findUserByID)
+  const  findUserByID = await User.findById(id);
+  if(id) done(null, findUserByID);
 });
 
 // Create Discord Strategy
@@ -27,7 +28,8 @@ passport.use(new DiscordStrategy({
     } else {
       const createUser = await User.create({
         dsID: profile.id,
-        dsUsername: profile.username
+        dsUsername: profile.username,
+        wsRole: 'Member'
       });
 
       const saveUser = await createUser.save();

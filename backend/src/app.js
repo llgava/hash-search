@@ -30,6 +30,6 @@ app.listen(port, () => {
   console.clear();
   console.log(`${chalk.bold.greenBright('[!]')} The application is online.`);
   database.then(() => {
-    console.log(`${chalk.bold.greenBright('[!]')} Connected to the database ${chalk.magenta.bold(process.env.MONGO_DBNAME)} via MongoDB.\n`);
+    console.log(`${chalk.bold.greenBright('[!]')} Connected to the database: ${chalk.magenta.bold(process.env.MONGO_DBNAME)}\n`);
   }).catch(err => console.log(err));
 });
