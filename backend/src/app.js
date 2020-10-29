@@ -28,8 +28,8 @@ app.use('/dashboard', Dashboard);
 // Start
 app.listen(port, () => {
   console.clear();
-  console.log(`${chalk.bold.greenBright('[!]')} The application is online.`);
+  console.log(`❕The application is online.`);
   database.then(() => {
-    console.log(`${chalk.bold.greenBright('[!]')} Connected to the database: ${chalk.magenta.bold(process.env.MONGO_DBNAME)}\n`);
+    console.log(`❕Connected to the database: ${chalk.magenta.bold(process.env.MONGO_DBNAME)}\n`);
   }).catch(err => console.log(err));
 });

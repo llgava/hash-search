@@ -6,10 +6,12 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "styled-components": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -36,6 +38,5 @@
       "last 1 safari version"
     ]
   },
-
-  "proxy": "http://localhost:3000bc869a92-03fa-416e-971e-18edd89f6427"
+  "proxy": "http://localhost:3000"
 }
