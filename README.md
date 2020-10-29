@@ -7,6 +7,7 @@ Hash Search is a Website were you can search and publish bots for your Discord S
 > The image bellow is a **CONCEPT**, maybe the production version are different.
 
 ## Setup the Application
+**ATTENTION:** To run everything right, you need to install on your machine [Git](https://git-scm.com), [Node.js v14.11.0](https://nodejs.org/en/) or higher and [MongoDB](https://www.mongodb.com)
 
 ### **Cloning the repository**
   * Clone the repository using a URL or GitHub CLI.
