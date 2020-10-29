@@ -19,12 +19,14 @@ To run correctly the backend, you need create a new file on **backend** folder o
   * Copy the template file of `.env` on `.github/templates/.env-template` and paste on root of `backend` folder.
   * Add all credentials.
   * Enter on backend folder with `cd backend`.
+  * Install all dependencies with `npm install`.
   * If you want to stay develop while the application is running, use `npm run dev`, if not, use `npm run start`.
 
 ### **Starting the frontend**
 Remember to start the **backend** first if you use 3000 as port on them, making that, the frontend can be run on another port, such as 3001.
 
   * Enter on frontend folder with `cd frontend`.
+  * Install all dependencies with `npm install`.
   * Start using `npm run start`.
 
 ## Contact
