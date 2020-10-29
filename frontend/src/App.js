@@ -1,8 +1,14 @@
-import NewTest from './containers/NewTest';
+// Components
+import Header from './components/Header';
+
+// Containers
+import { GlobalStyle } from './styles/GlobalStyle';
+
 function App() {
   return (
     <>
-      <NewTest />
+      <Header />
+      <GlobalStyle />
     </>
   );
 }

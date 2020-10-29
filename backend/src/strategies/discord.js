@@ -29,6 +29,7 @@ passport.use(new DiscordStrategy({
       const createUser = await User.create({
         dsID: profile.id,
         dsUsername: profile.username,
+        dsAvatar: profile.avatar,
         wsRole: 'Member'
       });
 
