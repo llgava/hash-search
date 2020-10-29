@@ -1,7 +1,7 @@
 ![Logo](./.github/images/logo.png)
 
 ## A Discord Bot finder
-Hash Search is a Website were you can search and publish bots for your Discord Server, simples, fast to login and minimalist.
+Hash Search is a Website were you can search and publish bots for your Discord Server, simples, fast to login and minimalist 💜.
 
 ![Concept](./.github/images/concept.png)
 > The image bellow is a **CONCEPT**, maybe the production version are different.
