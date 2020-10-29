@@ -7,6 +7,7 @@ export const Container = styled.header`
   justify-content: flex-end;
   align-items: center;
   padding: 3% 15%;
+  background-color: white;
 
   // Logo
   img:nth-child(1) {

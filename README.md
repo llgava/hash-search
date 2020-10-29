@@ -1,15 +1,33 @@
-## .env
-```dotenv
-# Express
-EXPRESS_PORT=3000
+#
+![Logo](./.github/images/logo.png)
+#
 
-# Discord Application API
-CLIENT_ID=
-CLIENT_SECRET=
-CLIENT_REDIRECT=
+## A Discord Bot finder
+Hash Search is a Website were you can search and publish bots for your Discord Server, simples, fast to login and minimalist.
 
-# MongoDB
-MONGO_USERNAME=
-MONGO_PASSWORD=
-MONGO_DBNAME=
-```
+![Concept](./.github/images/concept.png)
+> The image bellow is a **CONCEPT**, maybe the production version are different.
+
+## Setup the Application
+
+### **Cloning the repository**
+  * Clone the repository using a URL or GitHub CLI.
+  * Enter the repository directory on your PC: `cd hash-search`
+
+### **Setting up backend and starting**
+To run correctly the backend, you need create a new file on **backend** folder on the clone of this directory.
+
+  * Copy the template file of `.env` on `.github/templates/.env-template` and paste on root of `backend` folder.
+  * Add all credentials.
+  * Enter on backend folder with `cd backend`.
+  * If you want to stay develop while the application is running, use `npm run dev`, if not, use `npm run start`.
+
+### **Starting the frontend**
+Remember to start the **backend** first if you use 3000 as port on them, making that, the frontend can be run on another port, such as 3001.
+
+  * Enter on frontend folder with `cd frontend`.
+  * Start using `npm run start`.
+
+## Contact
+
+Leonardo Luiz Gava - [@llgava](https://twitter.com/llgava "Leonardo Luiz Gava Twitter") - <llgavamt@gmail.com>

@@ -22,8 +22,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-app.use('/auth', Auth);
-app.use('/dashboard', Dashboard);
+app.use('/api/auth', Auth);
+app.use('/api/me', Dashboard);
 
 // Start
 app.listen(port, () => {
