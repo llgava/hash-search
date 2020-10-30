@@ -11,14 +11,14 @@ export const Container = styled.div`
   text-align: center;
 
   h1 { font-size: 40px; }
-  span { color: ${Colors.pink} }
+  span { color: ${Colors.pink}; }
 `;
 
 export const SearchField = styled.div`
   margin-top: 65px;
 
   input, button { font-size: 20px; }
-  
+
   input {
     width: calc(486px - 52px);
     height: 62px;
@@ -46,7 +46,5 @@ export const SearchField = styled.div`
     height: 66px;
   }
 
-  button:hover {
-    background-color: ${Colors.dark_blue}
-  }
+  button:hover { background-color: ${Colors.dark_blue}; }
 `;
