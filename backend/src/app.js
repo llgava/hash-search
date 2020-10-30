@@ -8,7 +8,7 @@ const DiscordStrategy = require('./strategies/discord'); // Import the Discord s
 const { Auth, Dashboard } = require('./routes'); // Import all routes.
 
 const app = express();
-const port = process.env.EXPRESS_PORT || 3000;
+const port = process.env.EXPRESS_PORT;
 
 app.use(session({
   secret: '0801a3d6-8999-4844-8184-b65523b1ffc4',
