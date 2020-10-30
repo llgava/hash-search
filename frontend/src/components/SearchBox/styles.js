@@ -4,6 +4,10 @@ import HashTag from '../../images/hashtag.png';
 import Colors from '../../styles/Colors.json';
 
 export const Container = styled.div`
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -25%);
   text-align: center;
 
   h1 { font-size: 40px; }
@@ -11,16 +15,10 @@ export const Container = styled.div`
 `;
 
 export const SearchField = styled.div`
-  position: absolute;
   margin-top: 65px;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -35%);
 
-  input, button {
-    font-size: 20px;
-  }
-
+  input, button { font-size: 20px; }
+  
   input {
     width: calc(486px - 52px);
     height: 62px;
