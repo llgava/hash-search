@@ -1,4 +1,4 @@
 const Auth = require('./auth');
-const Dashboard = require('./dashboard');
+const Me = require('./me');
 
-module.exports = { Auth, Dashboard };
+module.exports = { Auth, Me };

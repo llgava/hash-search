@@ -5,7 +5,7 @@ const passport = require('passport');
 const database = require('./database/connection');
 const chalk = require('chalk');
 const DiscordStrategy = require('./strategies/discord'); // Import the Discord strategy.
-const { Auth, Dashboard } = require('./routes'); // Import all routes.
+const { Auth, Me } = require('./routes'); // Import all routes.
 
 const app = express();
 const port = process.env.EXPRESS_PORT;
@@ -23,7 +23,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/auth', Auth);
-app.use('/api/me', Dashboard);
+app.use('/api/me', Me);
 
 // Start
 app.listen(port, () => {
