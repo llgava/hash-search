@@ -37,9 +37,9 @@ export default class Header extends React.Component {
           </ul>
         </nav>
 
-        {isLoggedIn
+        { isLoggedIn
           ? <img src={ProfileAvatar} alt={this.state.user.dsUsername} />
-          : <a href="/#"><button>login</button></a>
+          : <a href="http://localhost:3000/api/auth"><button>login</button></a>
         }
 
       </Container>

@@ -1,3 +1,5 @@
+<br/>
+
 ![Logo](./.github/images/logo.png)
 
 ## A Discord Bot finder
@@ -16,7 +18,7 @@ Hash Search is a Website were you can search and publish bots for your Discord S
 ### **Setting up backend and starting**
 To run correctly the backend, you need create a new file on **backend** folder on the clone of this directory.
 
-  * Copy the template file of `.env` on `.github/templates/.env-template` and paste on root of `backend` folder.
+  * Copy the template file of `.env` on `.github/templates/.env` and paste on root of `backend` folder.
   * Add all credentials.
   * Enter on backend folder with `cd backend`.
   * Install all dependencies with `npm install`.
