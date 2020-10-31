@@ -10,7 +10,7 @@ export const Container = styled.header`
   background-color: white;
 
   // Logo
-  img:nth-child(1) {
+  img {
     width: 356px;
     height: auto;
     margin-right: auto;
@@ -38,13 +38,5 @@ export const Container = styled.header`
 
   a button:hover { color: ${Colors.blue}; }
 
-  // Profile Avatar
-  img:nth-child(3) {
-    width: 64px;
-    height: 64px;
-    margin-left: 15px;
-    font-family: 'Gilroy', sans-serif;
-    border-radius: 32px;
-  }
 `;
 

@@ -11,7 +11,10 @@ export const Container = styled.div`
   text-align: center;
 
   h1 { font-size: 40px; }
-  span { color: ${Colors.pink}; }
+  span {
+    color: ${Colors.pink};
+    font-family: 'Gilroy', sans-serif;
+  }
 `;
 
 export const SearchField = styled.div`

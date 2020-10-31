@@ -21,14 +21,12 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  a:hover {
-    color: ${Colors.dark_blue};
-  }
+  p, span, ::placeholder { font-family: 'OpenSans', sans-serif; }
+  a:hover { color: ${Colors.dark_blue};  }
 
   ::placeholder {
     opacity: 0.3;
     color: black;
-    font-family: 'OpenSans', sans-serif;
     font-weight: bold;
   }
 
