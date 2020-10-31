@@ -17,7 +17,6 @@ export default class Header extends React.Component {
   }
 
   componentDidMount() {
-    // localhost:3000/api/me
     fetch('/api/me')
       .then(res => res.json())
       .then(user => this.setState({ user: user, isLoggedIn: true }));

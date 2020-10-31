@@ -2,34 +2,34 @@ import React from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 
 // Style
-import { Container } from './styles';
-
-const IconsSize = '32px';
+import { IconButton } from './styles';
 
 export default class DropdownMenu extends React.Component {
   constructor() {
     super();
     this.state = { onDropdown: false };
-
   }
 
   render() {
     const onDropdown = this.state.onDropdown;
 
+    // Define if the the site will show or hide the Dropdown Menu
     const ShowOrHide = () => {
       if (onDropdown) this.setState({ onDropdown: false });
         else this.setState({ onDropdown: true })
     }
 
     return (
-      <Container>
-        <div> <FaAngleDown size={IconsSize} onClick={ShowOrHide} /> </div>
+      <>
+        <IconButton>
+          <FaAngleDown className='teste' size='60' onClick={ShowOrHide} />
+        </IconButton>
 
         { onDropdown
           ? <p>YES</p>
           : <React.Fragment />
         }
-      </Container>
+      </>
     );
   }
 }
