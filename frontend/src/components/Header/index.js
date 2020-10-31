@@ -5,6 +5,7 @@ import Logo from '../../images/logo.png';
 
 // Style
 import { Container } from './styles';
+import DropdownMenu from './Dropdown Menu/DropdownMenu';
 
 export default class Header extends React.Component {
   constructor() {
@@ -19,11 +20,11 @@ export default class Header extends React.Component {
     // localhost:3000/api/me
     fetch('/api/me')
       .then(res => res.json())
-      .then(user => this.setState({ user: user, isLoggedIn: true }, () => console.log('Fetched!', user)));
+      .then(user => this.setState({ user: user, isLoggedIn: true }));
   }
 
   render() {
-    const ProfileAvatar = `https://cdn.discordapp.com/avatars/${this.state.user.dsID}/${this.state.user.dsAvatar}`;
+    //const ProfileAvatar = `https://cdn.discordapp.com/avatars/${this.state.user.dsID}/${this.state.user.dsAvatar}`;
     const isLoggedIn = this.state.isLoggedIn;
 
     return(
@@ -38,9 +39,10 @@ export default class Header extends React.Component {
         </nav>
 
         { isLoggedIn
-          ? <img src={ProfileAvatar} alt={this.state.user.dsUsername} />
+          ? <DropdownMenu />
           : <a href="http://localhost:5000/api/auth"><button>login</button></a>
         }
+
 
       </Container>
     );
