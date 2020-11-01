@@ -37,6 +37,5 @@ export const Container = styled.header`
   }
 
   a button:hover { color: ${Colors.blue}; }
-
 `;
 

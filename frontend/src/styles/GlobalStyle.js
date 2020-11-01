@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   * {
+    border: 0;
+    margin: 0;
     color: ${Colors.dark_grey};
     text-decoration: none;
   }

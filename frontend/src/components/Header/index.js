@@ -1,49 +1,39 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react';
+import { FaChevronCircleDown } from 'react-icons/fa'
 import fetch from 'node-fetch';
 
+// Component Elements (E.g: Images, sounds, videos).
 import Logo from '../../images/logo.png';
 
-// Style
+// Every style of this component.
 import { Container } from './styles';
-import DropdownMenu from './Dropdown Menu/DropdownMenu';
 
-export default class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      user: [],
-      isLoggedIn: false
-    }
-  }
+const IconsSize = 40;
 
-  componentDidMount() {
-    fetch('/api/me')
-      .then(res => res.json())
-      .then(user => this.setState({ user: user, isLoggedIn: true }));
-  }
+export default function Header() {
+  const [user, setUser] = useState([]);
 
-  render() {
-    //const ProfileAvatar = `https://cdn.discordapp.com/avatars/${this.state.user.dsID}/${this.state.user.dsAvatar}`;
-    const isLoggedIn = this.state.isLoggedIn;
+  // Fetch all data from http://localhost:5000/api/me if the user are logged in.
+  useEffect(async () => {
+    const UserFetch = await fetch('/api/me');
+    const UserData = await UserFetch.json();
 
-    return(
-      <Container>
-        <img src={Logo} alt="Logo" />
+    setUser(UserData);
+  }, []);
 
-        <nav>
-          <ul>
-            <li><a href='/#'>home</a></li>
-            <li><a href='https://github.com/llgava/hash-search' target="__blank">open source</a></li>
-          </ul>
-        </nav>
+  return (
+    <Container>
+      <img src={Logo} alt="Logo" />
 
-        { isLoggedIn
-          ? <DropdownMenu />
-          : <a href="http://localhost:5000/api/auth"><button>login</button></a>
-        }
+      <nav>
+        <ul>
+          <li><a href='/#'>home</a></li>
+          <li><a href='https://github.com/llgava/hash-search' target="__blank">open source</a></li>
+        </ul>
+      </nav>
 
-
-      </Container>
-    );
-  }
+      <FaChevronCircleDown size={IconsSize} />
+    </Container>
+  )
 }

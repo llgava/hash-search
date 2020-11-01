@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Colors from '../../../styles/Colors.json';
+import Colors from '../../styles/Colors.json';
 
 export const IconButton = styled.div`
   width: 40px;
@@ -14,9 +14,13 @@ export const IconButton = styled.div`
   }
 `;
 
-export const DropdownMenuList = styled.div`
+export const DropdownList = styled.div`
   width: 20%;
   height: auto;
+  position: absolute;
+  top: 3%;
+  width: 300px;
+  background-color: ${Colors.ice};
 
   div:nth-child(1) {
     padding: 15px;
