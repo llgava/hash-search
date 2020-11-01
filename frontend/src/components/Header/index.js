@@ -12,6 +12,7 @@ import { Container } from './styles';
 const IconsSize = 40;
 
 export default function Header() {
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState([]);
 
   // Fetch all data from http://localhost:5000/api/me if the user are logged in.
