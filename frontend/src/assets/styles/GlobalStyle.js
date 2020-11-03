@@ -19,11 +19,12 @@ export const GlobalStyle = createGlobalStyle`
   * {
     border: 0;
     margin: 0;
-    color: ${Colors.dark_grey};
     text-decoration: none;
   }
 
   p, span, ::placeholder { font-family: 'OpenSans', sans-serif; }
+
+  a { color: ${Colors.dark_grey}; }
   a:hover { color: ${Colors.dark_blue};  }
 
   ::placeholder {

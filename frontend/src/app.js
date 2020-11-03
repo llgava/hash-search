@@ -8,8 +8,7 @@ import UserProvider from './contexts/User';
 
 // Containers
 import { GlobalStyle } from './assets/styles/GlobalStyle';
-import __test__ from './components/__teste__';
-
+import __test__ from './components/__test__';
 
 function App() {
   return (
