@@ -4,7 +4,11 @@ import Colors from '../../assets/styles/Colors.json';
 import BackgroundProfile from '../../assets/images/background-profile.png';
 
 export const Container = styled.div`
+  position: absolute;
+  top: 125px;
+  right: 150px;
   width: 320px;
+  height: auto;
   border-radius: 15px;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 `;
@@ -21,7 +25,7 @@ export const Profile = styled.div`
   img {
     background-color: ${Colors.blue};
     width: 64px;
-    height: auto;
+    height: 64px;
     border-radius: 32px;
     margin-right: 15px;
   }

@@ -4,6 +4,7 @@ import HashTag from '../../assets/images/hashtag.svg';
 import Colors from '../../assets/styles/Colors.json';
 
 export const Container = styled.div`
+  color: ${Colors.dark_grey};
   position: absolute;
   top: 35%;
   left: 50%;
@@ -11,6 +12,7 @@ export const Container = styled.div`
   text-align: center;
 
   h1 { font-size: 40px; }
+
   span {
     color: ${Colors.pink};
     font-family: 'Gilroy', sans-serif;
@@ -34,6 +36,7 @@ export const SearchField = styled.div`
   }
 
   input:focus {
+    color: ${Colors.dark_grey};
     outline-style: none;
     box-shadow: inset 0 0 0 2px ${Colors.dark_blue};
     border: 2px solid transparent;

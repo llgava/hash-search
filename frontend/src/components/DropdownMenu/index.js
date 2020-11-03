@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaCrown, FaSignOutAlt, FaThList, FaUser } from 'react-icons/fa';
 
 import { Container, Profile, Items, Item } from './styles';
 
@@ -12,12 +11,11 @@ export default function DropdownMenu() {
 
   const BaseURL = 'https://cdn.discordapp.com/avatars/'
   const UserAvatar = `${BaseURL}${user.dsID}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
-  const IconSize = 25;
 
   return (
     <Container>
       <Profile>
-        <img src={UserAvatar} />
+        <img src={UserAvatar} alt='User avatar' />
         <div>
           <h1>{user.dsUsername}</h1>
           <p>{user.wsRole}</p>

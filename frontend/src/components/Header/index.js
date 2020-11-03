@@ -1,19 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react';
+import React, { useState } from 'react';
 import { FaChevronCircleDown } from 'react-icons/fa'
 
 // Elements, components, contexts, ands styles.
 import Logo from '../../assets/images/logo.svg';
 import DropdownMenu from '../DropdownMenu';
 import { useLoggedIn } from '../../contexts/LoggedIn';
-import { Container } from './styles';
+import { Container, HeaderLogo } from './styles';
+import Colors from '../../assets/styles/Colors.json';
 
 export default function Header() {
   const { loggedIn } = useLoggedIn();
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
     <Container>
-      <img src={Logo} alt="Logo" />
+      <HeaderLogo src={Logo} alt="Logo" />
 
       <nav>
         <ul>
@@ -22,8 +24,18 @@ export default function Header() {
         </ul>
       </nav>
 
+      { openDropdown
+        ? <DropdownMenu />
+        : null
+      }
+
       { loggedIn
-        ? <FaChevronCircleDown size={40} />
+        ? <FaChevronCircleDown size={40}
+            style={{
+              cursor: "pointer",
+              color: Colors.dark_grey
+            }}
+            onClick={() => { setOpenDropdown(!openDropdown) }}/>
         : <a href='http://localhost:5000/api/auth'><button>login</button></a>
       }
 

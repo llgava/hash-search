@@ -8,7 +8,6 @@ import UserProvider from './contexts/User';
 
 // Containers
 import { GlobalStyle } from './assets/styles/GlobalStyle';
-import __test__ from './components/__test__';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <UserProvider>
         <LoggedInProvider>
         <Header />
-        <__test__ />
         </LoggedInProvider>
       </UserProvider>
       <SearchBox />
