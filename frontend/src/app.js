@@ -7,7 +7,7 @@ import LoggedInProvider from './context/LoggedIn';
 import UserProvider from './context/User';
 
 // Containers
-import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalStyle } from './assets/styles/GlobalStyle';
 
 
 function App() {

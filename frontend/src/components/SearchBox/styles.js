@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import HashTag from '../../images/hashtag.svg';
-import Colors from '../../styles/Colors.json';
+import HashTag from '../../assets/images/hashtag.svg';
+import Colors from '../../assets/styles/Colors.json';
 
 export const Container = styled.div`
   position: absolute;

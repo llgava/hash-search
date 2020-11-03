@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Colors from '../../styles/Colors.json';
+import Colors from '../../assets/styles/Colors.json';
 
 export const Container = styled.header`
   display: flex;

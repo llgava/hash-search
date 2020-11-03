@@ -3,7 +3,7 @@ import React from 'react';
 import { FaChevronCircleDown } from 'react-icons/fa'
 
 // Component Elements (E.g: Images, sounds, videos).
-import Logo from '../../images/logo.svg';
+import Logo from '../../assets/images/logo.svg';
 
 // Every style of this component.
 import { Container } from './styles';
