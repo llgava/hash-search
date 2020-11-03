@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import HashTag from '../../images/hashtag.png';
+import HashTag from '../../images/hashtag.svg';
 import Colors from '../../styles/Colors.json';
 
 export const Container = styled.div`
@@ -29,6 +29,7 @@ export const SearchField = styled.div`
     border-radius: 10px;
     padding: 0 0 0 52px;
     background: url(${HashTag}) no-repeat scroll 20px 21.5px;
+    background-size: 18px;
     background-color: ${Colors.ice};
   }
 

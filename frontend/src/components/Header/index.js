@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
+import { FaChevronCircleDown } from 'react-icons/fa'
 
 // Component Elements (E.g: Images, sounds, videos).
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo.svg';
 
 // Every style of this component.
 import { Container } from './styles';
@@ -25,7 +26,7 @@ export default function Header() {
       </nav>
 
       { loggedIn
-        ? <p>Logado</p>
+        ? <FaChevronCircleDown size={40}/>
         : <p>Deslogado</p>
       }
 
