@@ -1,50 +1,31 @@
 import styled from 'styled-components';
 
-import Colors from '../../styles/Colors.json';
+import Colors from '../../assets/styles/Colors.json';
+import BackgroundProfile from '../../assets/images/background-profile.png';
 
-export const IconButton = styled.div`
-  width: 40px;
-  height: 38px;
-  border-radius: 32px;
-  background-color: ${Colors.ice};
-
-  :hover {
-    cursor: pointer;
-    background-color: ${Colors.light_grey};
-  }
+export const Container = styled.div`
+  width: 320px;
 `;
 
-export const DropdownList = styled.div`
-  width: 20%;
-  height: auto;
-  position: absolute;
-  top: 3%;
-  width: 300px;
-  background-color: ${Colors.ice};
+export const Profile = styled.div`
+  background-image: url(${BackgroundProfile});
+  background-color: ${Colors.dark_blue};
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px 15px 0 0;
 
-  div:nth-child(1) {
-    padding: 15px;
-    border-radius: 15px 15px 0 0;
-    display: inline-flexbox;
-    line-height: 0px;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background-color: ${Colors.dark_blue};
-  }
-
-  p, span { color: white; }
-  p { font-weight: 600; }
-
-  span {
-    font-size: 12px;
-    font-weight: 500;
-  }
-
+  // Profile Avatar.
   img {
-    margin-right: 15px;
-    border-radius: 32px;
+    background-color: ${Colors.blue};
     width: 64px;
     height: auto;
+    border-radius: 32px;
+    margin-right: 15px;
   }
+
+  // Profile informations (Username and role).
+  h1, p { color: white; }
+  h1 { font-size: 20px; }
+  p { font-weight: 500; }
 `;

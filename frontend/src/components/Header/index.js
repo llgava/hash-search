@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-//import { FaChevronCircleDown } from 'react-icons/fa'
+import { FaChevronCircleDown } from 'react-icons/fa'
 
 // Elements, components, contexts, ands styles.
 import Logo from '../../assets/images/logo.svg';
 import DropdownMenu from '../DropdownMenu';
-import { useLoggedIn } from '../../context/LoggedIn';
+import { useLoggedIn } from '../../contexts/LoggedIn';
 import { Container } from './styles';
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
       </nav>
 
       { loggedIn
-        ? <>{/* <FaChevronCircleDown size={40} /> */} <DropdownMenu /></>
+        ? <FaChevronCircleDown size={40} />
         : <a href='http://localhost:5000/api/auth'><button>login</button></a>
       }
 
