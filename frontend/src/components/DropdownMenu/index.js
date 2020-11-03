@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default class Dropdown extends React.Component {
-  render() {
-    return (
-      <>Teste</>
-    );
-  }
+// import { Container } from './styles';
+
+export default function DropdownMenu() {
+  return (
+    <></>
+  );
 }
