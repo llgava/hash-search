@@ -27,10 +27,12 @@ export default function DropdownMenu() {
         {/* Map all the objects on ItemsValues */}
         {ItemsValues.map((menuItem, index) => {
           return (
-            <Item onClick={menuItem.event}>
+            <a href={menuItem.event}>
+            <Item>
               {menuItem.icon}
               <h1 style={{ color: menuItem.label.color }}>{menuItem.label.text}</h1>
             </Item>
+            </a>
           )
         })}
       </Items>

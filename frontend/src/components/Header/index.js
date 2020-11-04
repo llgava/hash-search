@@ -36,7 +36,7 @@ export default function Header() {
               color: Colors.dark_grey
             }}
             onClick={() => { setOpenDropdown(!openDropdown) }}/>
-        : <a href='http://localhost:5000/api/auth'><button>login</button></a>
+        : <a href='http://localhost:5000/api/auth'><button>login with Discord</button></a>
       }
 
     </Container>

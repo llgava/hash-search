@@ -29,7 +29,7 @@ export const ItemsValues = [
     }
   },
   {
-    event: undefined,
+    event: 'http://localhost:5000/api/auth/logout',
     icon: <FaSignOutAlt size={IconsSize} color={Colors.red} />,
     label: {
       text: "Logout",
