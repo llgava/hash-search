@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import { Container, Profile, Items, Item } from './styles';
@@ -12,6 +13,7 @@ export default function DropdownMenu() {
   const BaseURL = 'https://cdn.discordapp.com/avatars/'
   const UserAvatar = `${BaseURL}${user.dsID}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
 
+
   return (
     <Container>
       <Profile>
@@ -23,16 +25,15 @@ export default function DropdownMenu() {
       </Profile>
 
       <Items>
-        {
-          ItemsValues.map((menuItem) => {
-            return (
-              <Item onClick={menuItem.event}>
-                {menuItem.icon}
-                <h1 style={{color: menuItem.label.color}}>{menuItem.label.text}</h1>
-              </Item>
-            )
-          })
-        }
+        {/* Map all the objects on ItemsValues */}
+        {ItemsValues.map((menuItem, index) => {
+          return (
+            <Item onClick={menuItem.event}>
+              {menuItem.icon}
+              <h1 style={{ color: menuItem.label.color }}>{menuItem.label.text}</h1>
+            </Item>
+          )
+        })}
       </Items>
 
     </Container>

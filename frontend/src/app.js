@@ -1,22 +1,18 @@
 import React from 'react';
 
 // Components
-import Header from './components/Header';
 import SearchBox from './components/SearchBox';
-import LoggedInProvider from './contexts/LoggedIn';
-import UserProvider from './contexts/User';
 
 // Containers
 import { GlobalStyle } from './assets/styles/GlobalStyle';
 
+// Components with provider
+import HeaderWithProviders from './components-providers/Header';
+
 function App() {
   return (
     <>
-      <UserProvider>
-        <LoggedInProvider>
-        <Header />
-        </LoggedInProvider>
-      </UserProvider>
+      <HeaderWithProviders />
       <SearchBox />
       <GlobalStyle />
     </>

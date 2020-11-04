@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
 import Colors from '../../assets/styles/Colors.json';
-import BackgroundProfile from '../../assets/images/background-profile.png';
+
+// Backgrounds
+import BG0 from '../../assets/images/background-profile-0.png';
+import BG1 from '../../assets/images/background-profile-1.png';
+import BG2 from '../../assets/images/background-profile-2.png';
+import BG3 from '../../assets/images/background-profile-3.png';
+
+// A random Background selector.
+const BackgroundProfile = [BG0, BG1, BG2, BG3]
+const Selector = Math.floor(Math.random() * BackgroundProfile.length);
 
 export const Container = styled.div`
   position: absolute;
@@ -14,7 +23,7 @@ export const Container = styled.div`
 `;
 
 export const Profile = styled.div`
-  background-image: url(${BackgroundProfile});
+  background-image: url(${BackgroundProfile[Selector]});
   background-color: ${Colors.dark_blue};
   padding: 15px;
   display: flex;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import HashTag from '../../assets/images/hashtag.svg';
+import BackgroundStars from '../../assets/images/background-stars.svg';
 import Colors from '../../assets/styles/Colors.json';
 
 export const Container = styled.div`
@@ -20,7 +21,11 @@ export const Container = styled.div`
 `;
 
 export const SearchField = styled.div`
+  padding: 30px;
   margin-top: 65px;
+  background-image: url(${BackgroundStars});
+  background-size: cover;
+  background-repeat: no-repeat;
 
   input, button { font-size: 20px; }
 
