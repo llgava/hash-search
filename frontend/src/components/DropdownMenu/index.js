@@ -13,7 +13,6 @@ export default function DropdownMenu() {
   const BaseURL = 'https://cdn.discordapp.com/avatars/'
   const UserAvatar = `${BaseURL}${user.dsID}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
 
-
   return (
     <Container>
       <Profile>
@@ -35,7 +34,6 @@ export default function DropdownMenu() {
           )
         })}
       </Items>
-
     </Container>
   );
 }

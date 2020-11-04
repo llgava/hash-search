@@ -7,7 +7,7 @@ import SearchBox from './components/SearchBox';
 import { GlobalStyle } from './assets/styles/GlobalStyle';
 
 // Components with provider
-import HeaderWithProviders from './components-providers/Header';
+import HeaderWithProviders from './components.providers/Header';
 
 function App() {
   return (
