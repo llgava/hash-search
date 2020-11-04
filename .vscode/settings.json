@@ -1,6 +1,11 @@
 {
   "files.exclude": {
     "backend": false,
-    ".github": true
+    ".github": false
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false
   }
 }
