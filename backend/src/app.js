@@ -2,10 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
-const database = require('./database/connection');
-const chalk = require('chalk');
 const DiscordStrategy = require('./strategies/discord'); // Import the Discord strategy.
 const { Auth, Me } = require('./routes'); // Import all routes.
+const { StartLog } = require('./log');
 
 const app = express();
 const port = process.env.EXPRESS_PORT;
@@ -26,11 +25,4 @@ app.use('/api/auth', Auth);
 app.use('/api/me', Me);
 
 // Start
-app.listen(port, () => {
-  console.clear();
-  // ❱
-  console.log(`${chalk.bold.greenBright('❱')} The application is online.`);
-  database.then(() => {
-    console.log(`${chalk.bold.greenBright('❱')} Connected to the database: ${chalk.magenta.bold(process.env.MONGO_DBNAME)}\n`);
-  }).catch(err => console.log(err));
-});
+app.listen(port, () => StartLog());

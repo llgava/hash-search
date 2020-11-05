@@ -6,6 +6,7 @@ import Colors from '../../assets/styles/Colors.json';
 export const Container = styled.div`
   margin-top: 120px;
   text-align: center;
+  color: ${Colors.dark_grey};
 
   h1 { font-size: 40px; }
 
@@ -17,9 +18,7 @@ export const Container = styled.div`
 
 export const SearchField = styled.div`
   padding: 30px;
-  margin-top: 65px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin: 30px 0;
 
   input, button { font-size: 20px; }
 
