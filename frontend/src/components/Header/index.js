@@ -5,7 +5,7 @@ import { FaChevronCircleDown } from 'react-icons/fa'
 // Elements, components, contexts, ands styles.
 import Logo from '../../assets/images/logo.svg';
 import DropdownMenu from '../DropdownMenu';
-import { useLoggedIn } from '../../contexts/LoggedIn';
+import { useLoggedIn } from '../../hooks/LoggedIn';
 import { Container, HeaderLogo } from './styles';
 import Colors from '../../assets/styles/Colors.json';
 

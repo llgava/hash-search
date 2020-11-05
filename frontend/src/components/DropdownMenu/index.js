@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Container, Profile, Items, Item } from './styles';
 
-import { useUser } from '../../contexts/User';
+import { useUser } from '../../hooks/User';
 
 import { ItemsValues } from './index.content';
 

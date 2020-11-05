@@ -4,9 +4,9 @@ import React from 'react';
 import Header from '../components/Header';
 
 // Containers
-import UserProvider from '../contexts/User';
-import LoggedInProvider from '../contexts/LoggedIn';
-import StaffProvider from '../contexts/Staff';
+import UserProvider from '../hooks/User';
+import LoggedInProvider from '../hooks/LoggedIn';
+import StaffProvider from '../hooks/Staff';
 
 export default function HeaderWithProviders() {
   return (
