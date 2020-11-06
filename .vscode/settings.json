@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "backend": true,
+    "backend": false,
     "frontend": false,
     ".github": true,
     ".editorconfig": true,

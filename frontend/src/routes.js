@@ -31,7 +31,6 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route exact path={['/', '/home']} component={Home} />
-
         <Route exact path='/my-bots' component={authComponents.myBots} />
         <Route exact path='/account-settings' component={authComponents.accountSettings} />
       </Switch>

@@ -3,6 +3,10 @@ const chalk = require("chalk");
 const chars = { success: '✔', error: '✖', proceeding: '↪' }
 
 function CreateUser(type, username, disabled) {
+  // ========= REMOVE WHEN THE APPLICATION ARE FINISHED =========
+                          disabled = true
+  // ============================================================
+
   if(!disabled) {
     switch (type) {
       case 'created':
