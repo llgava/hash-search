@@ -1,10 +1,10 @@
 {
   "files.exclude": {
-    "backend_": false,
-    "frontend": true,
+    "backend": false,
+    "frontend": false,
     ".github": true,
     ".editorconfig": true,
-    ".gitignore": false,
+    ".gitignore": true,
     "LICENSE": true,
     "package-lock.json": true,
     "README.md": true

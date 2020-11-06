@@ -10,6 +10,6 @@ const UserSchema = new Mongoose.Schema({
 
   // Website
   wsRole: { type: String, required: true }
-});
+}, { versionKey: false });
 
 const User = module.exports = Mongoose.model('User', UserSchema);

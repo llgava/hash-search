@@ -1,16 +1,32 @@
 require('dotenv').config();
-const Express = require('express');
-const BodyParser = require('body-parser');
+const express = require('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const DiscordStrategy = require('./strategies/Discord');
+const { Auth, Me } = require('./routes');
 const { Start } = require('./util/logs')
 
-const App = Express();
+const App = express();
 const Port = process.env.EXPRESS_PORT;
 
-App.use(BodyParser.json());
-App.use(BodyParser.urlencoded({ extended: false }));
+App.use(bodyParser.json());
+App.use(bodyParser.urlencoded({ extended: false }));
 
-App.get('/', (req, res) => {
-  res.json({ status: true });
-});
+// Initialize user session.
+App.use(session({
+  secret: '1a7e72e0-e4d4-4eb7-a38f-896cfc9698a2',
+  cookie: { maxAge: 60000 * 60 * 24 },
+  saveUninitialized: false,
+  name: 'Discord.OAuth2'
+}));
 
+App.use(passport.initialize());
+App.use(passport.session());
+
+// Routes
+App.use('/auth', Auth);
+App.use('/me', Me);
+
+// App start
 App.listen(Port, () => Start());
