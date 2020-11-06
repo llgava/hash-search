@@ -32,7 +32,7 @@ passport.use(new Discord({
 
     // Will check if the User exists, if not, it will be created.
     if (findUser) {
-      done(null, findUser, CreateUser('already', profile.username));
+      done(null, findUser, CreateUser('already', profile.username, false));
 
     } else {
       const createUser = await User.create({
@@ -45,9 +45,9 @@ passport.use(new Discord({
       });
 
       const saveUser = await createUser.save();
-      done(null, saveUser, CreateUser('created', profile.username));
+      done(null, saveUser, CreateUser('created', profile.username, false));
     }
   } catch (err) {
-    done(null, null, CreateUser('error', profile.username));
+    done(null, null, CreateUser('error', profile.username, false));
   }
 }));
