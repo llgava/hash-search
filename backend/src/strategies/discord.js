@@ -1,43 +1,44 @@
-const passport = require('passport');
-const DiscordStrategy = require('passport-discord');
-const User = require('../database/models/Users');
+const Passport = require("passport");
+const Discord = require("passport-discord");
+const User = require("../database/models/User");
+const { CreateUser } = require('../util/logs');
 
-// Check the user informations on database.
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+const Config = {
+  id: process.env.CLIENT_ID,
+  secret: process.env.CLIENT_SECRET,
+  redirect: process.env.CLIENT_REDIRECT,
+  scopes: ['identify', 'email']
+}
 
-// Check if the user already exists on database.
-passport.deserializeUser(async (id, done) => {
-  const  findUserByID = await User.findById(id);
-  if(id) done(null, findUserByID);
-});
+function DiscordStrategy() {
+  Passport.use(new Discord({
+    clientID: Config.id,
+    clientSecret: Config.secret,
+    callbackURL: Config.redirect,
+    scope: Config.scopes
+  }, async (accessToken, refreshToken, profile, done) => {
+    try {
+      const findUser = await User.findOne({ dsId: profile.id });
 
-// Create Discord Strategy
-passport.use(new DiscordStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: process.env.CLIENT_REDIRECT,
-  scope: ['identify', 'email']
-}, async (accessToken, refreshToken, profile, done) => {
-  try {
-    const findUser = await User.findOne({ dsID: profile.id });
+      // Will check if the User exists, if not, it will be created.
+      if(findUser) {
+        done(null, findUser, { message: "Encontrado com sucesso." });
+      } else {
+        const createUser = await User.create({
+          dsId: profile.id,
+          dsUsername: profile.username,
+          dsDiscriminator: profile.discriminator,
+          dsAvatar: profile.avatar,
+          dsEmail: profile.email,
+          wsRole: 'Member'
+        });
 
-    if (findUser) {
-      done(null, findUser)
-    } else {
-      const createUser = await User.create({
-        dsID: profile.id,
-        dsUsername: profile.username,
-        dsAvatar: profile.avatar,
-        wsRole: 'Member'
-      });
-
-      const saveUser = await createUser.save();
-      done(null, saveUser);
+        const saveUser = await createUser.save();
+        done(null, saveUser);
+      }
+    } catch (err) {
+      console.log(err),
+      done(err, null)
     }
-  } catch (error) {
-    console.log(error);
-    done(error, null);
-  }
-}));
+  }))
+}

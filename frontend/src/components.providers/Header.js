@@ -8,7 +8,7 @@ import UserProvider from '../hooks/User';
 import LoggedInProvider from '../hooks/LoggedIn';
 import StaffProvider from '../hooks/Staff';
 
-export default function HeaderWithProviders() {
+function HeaderWithProviders() {
   return (
     <UserProvider>
       <LoggedInProvider>
@@ -19,3 +19,5 @@ export default function HeaderWithProviders() {
     </UserProvider>
   );
 }
+
+export default HeaderWithProviders;

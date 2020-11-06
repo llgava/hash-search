@@ -1,7 +1,13 @@
 {
   "files.exclude": {
-    "backend": false,
-    ".github": false
+    "backend_": false,
+    "frontend": true,
+    ".github": true,
+    ".editorconfig": true,
+    ".gitignore": false,
+    "LICENSE": true,
+    "package-lock.json": true,
+    "README.md": true
   },
 
   "[javascript]": {
