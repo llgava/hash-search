@@ -10,16 +10,4 @@ router.get('/redirect', passport.authenticate('discord', {
   successRedirect: process.env.SUCCESS_REDIRECT
 }));
 
-router.get('/me', (req, res) => {
-  res.json(req.user);
-})
-/* router.get('/logout', (req, res) => {
-  if(req.user) {
-    req.logOut();
-    res.redirect('http://localhost:3000/');
-  } else {
-    res.redirect('http://localhost:3000/');
-  }
-}) */
-
 module.exports = router;

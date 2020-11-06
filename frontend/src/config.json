@@ -1,4 +1,5 @@
 {
-  "loginURL": "http://localhost:3000/auth",
-  "logoutURL": "http://localhost:3000/logout"
+  "loginURL": "http://localhost:3000/login",
+  "logoutURL": "http://localhost:3000/logout",
+  "userDataURL": "http://localhost:3000/me"
 }

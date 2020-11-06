@@ -1,4 +1,5 @@
-const Auth = require('./auth');
-const Me = require('./me');
+const Login = require('./controllers/login');
+const Logout = require('./controllers/logout');
+const Me = require('./controllers/me');
 
-module.exports = { Auth, Me };
+module.exports = { Login, Logout, Me };
