@@ -1,14 +1,40 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/home';
+import MyBots from './pages/my-bots';
+import AccountSettings from './pages/account-settings';
 
-const Routes = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Home} />
-    </Switch>
-  </BrowserRouter>
-);
+import { useLoggedIn } from './hooks/LoggedIn';
 
-export default Routes;
+export default function Routes() {
+  const { loggedIn } = useLoggedIn();
+
+  let authComponents = {
+    myBots: undefined,
+    accountSettings: undefined
+  }
+
+  if(loggedIn) {
+    authComponents = {
+      myBots: MyBots,
+      accountSettings: AccountSettings
+    }
+  } else {
+    authComponents = {
+      myBots: Home,
+      accountSettings: Home
+    }
+  }
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={['/', '/home']} component={Home} />
+
+        <Route exact path='/my-bots' component={authComponents.myBots} />
+        <Route exact path='/account-settings' component={authComponents.accountSettings} />
+      </Switch>
+    </BrowserRouter>
+  );
+}
