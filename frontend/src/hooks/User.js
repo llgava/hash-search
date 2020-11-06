@@ -7,7 +7,7 @@ export default function UserProvider({ children }) {
   const [user, setUser] = useState([]);
 
   useEffect(async () => {
-    const UserFetch = await fetch('/api/me');
+    const UserFetch = await fetch('/me');
     const UserData = await UserFetch.json();
 
     setUser(UserData);

@@ -11,14 +11,14 @@ export default function DropdownMenu() {
   const { user } = useUser();
 
   const BaseURL = 'https://cdn.discordapp.com/avatars/'
-  const UserAvatar = `${BaseURL}${user.dsID}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
+  const UserAvatar = `${BaseURL}${user.dsId}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
 
   return (
     <Container>
       <Profile>
         <img src={UserAvatar} alt='User avatar' />
         <div>
-          <h1>{user.dsUsername}</h1>
+          <h1>{user.dsUsername}#{user.dsDiscriminator}</h1>
           <p>{user.wsRole}</p>
         </div>
       </Profile>

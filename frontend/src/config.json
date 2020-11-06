@@ -1,0 +1,4 @@
+{
+  "loginURL": "http://localhost:3000/auth",
+  "logoutURL": "http://localhost:3000/logout"
+}

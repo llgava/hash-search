@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
 import { FaChevronCircleDown } from 'react-icons/fa'
+import { loginURL } from '../../config.json';
 
 // Elements, components, contexts, ands styles.
 import Logo from '../../assets/images/logo.svg';
@@ -36,7 +37,7 @@ export default function Header() {
               color: Colors.dark_grey
             }}
             onClick={() => { setOpenDropdown(!openDropdown) }}/>
-        : <a href='http://localhost:5000/api/auth'><button>login with Discord</button></a>
+        : <a href={loginURL}><button>login with Discord</button></a>
       }
 
     </Container>

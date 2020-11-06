@@ -1,4 +1,5 @@
 import { FaCrown, FaSignOutAlt, FaThList, FaUser } from 'react-icons/fa';
+import { logoutURL } from '../../config.json';
 
 import Colors from '../../assets/styles/Colors.json';
 
@@ -29,7 +30,7 @@ export const ItemsValues = [
     }
   },
   {
-    event: 'http://localhost:5000/api/auth/logout',
+    event: logoutURL,
     icon: <FaSignOutAlt size={IconsSize} color={Colors.red} />,
     label: {
       text: "Logout",
