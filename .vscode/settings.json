@@ -1,8 +1,8 @@
 {
   "files.exclude": {
-    "backend": false,
-    "frontend": false,
-    ".github": true,
+    "backend/": false,
+    "frontend/": false,
+    ".github/": true,
     ".editorconfig": true,
     ".gitignore": true,
     "LICENSE": true,
