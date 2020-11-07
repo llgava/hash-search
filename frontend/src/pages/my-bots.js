@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from '../components/Header';
 
 // Components
 
 
 const MyBots = () => (
   <>
-    <p>My Bots</p>
+    <Header />
   </>
 );
 

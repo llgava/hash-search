@@ -1,5 +1,5 @@
 import { FaCrown, FaSignOutAlt, FaThList, FaUser } from 'react-icons/fa';
-import { logoutURL } from '../../config.json';
+import { logoutURL, myBotsURL, accountSettingsURL } from '../../config.json';
 
 import Colors from '../../assets/styles/Colors.json';
 
@@ -14,7 +14,7 @@ export const ItemsValues = [
     }
   },
   {
-    event: undefined,
+    event: myBotsURL,
     icon: <FaThList size={IconsSize} color={Colors.dark_grey} />,
     label: {
       text: "My bots",
@@ -22,7 +22,7 @@ export const ItemsValues = [
     }
   },
   {
-    event: undefined,
+    event: accountSettingsURL,
     icon: <FaUser size={IconsSize} color={Colors.dark_grey} />,
     label: {
       text: "Account settings",
@@ -36,5 +36,5 @@ export const ItemsValues = [
       text: "Logout",
       color: Colors.red
     }
-  },
+  }
 ]

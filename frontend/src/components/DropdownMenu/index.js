@@ -1,24 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-
 import { Container, Profile, Items, Item } from './styles';
-
 import { useUser } from '../../hooks/User';
-
-import { ItemsValues } from './index.content';
+import { ItemsValues } from './ItemsValues';
 
 export default function DropdownMenu() {
   const { user } = useUser();
-
-  const BaseURL = 'https://cdn.discordapp.com/avatars/'
-  const UserAvatar = `${BaseURL}${user.dsId}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
+  const Avatar = `https://cdn.discordapp.com/avatars/${user.dsId}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
 
   return (
     <Container>
       <Profile>
-        <img src={UserAvatar} alt='User avatar' />
+        <img src={Avatar} alt='User avatar' />
         <div>
-          <h1>{user.dsUsername}#{user.dsDiscriminator}</h1>
+          <h1>{user.dsUsername}</h1>
           <p>{user.wsRole}</p>
         </div>
       </Profile>
