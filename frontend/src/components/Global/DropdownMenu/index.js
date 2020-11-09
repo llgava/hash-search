@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { Container, Profile, Items, Item } from './styles';
-import { useUser } from '../../hooks/User';
+import { useUser } from '../../../hooks/User';
 import { ItemsValues } from './ItemsValues';
 
 export default function DropdownMenu() {

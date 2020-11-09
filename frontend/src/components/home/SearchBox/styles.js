@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import HashTag from '../../assets/images/hashtag.svg';
-import Colors from '../../assets/styles/Colors.json';
+import HashTag from '../../../assets/images/hashtag.svg';
+import Colors from '../../../assets/styles/Colors.json';
 
 export const Container = styled.div`
   margin-top: 120px;

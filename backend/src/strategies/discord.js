@@ -41,7 +41,8 @@ passport.use(new Discord({
         dsDiscriminator: profile.discriminator,
         dsAvatar: profile.avatar,
         dsEmail: profile.email,
-        wsRole: 'Member'
+        wsRole: 'Member',
+        bots: []
       });
 
       const saveUser = await createUser.save();

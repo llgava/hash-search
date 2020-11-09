@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Components
-import Header from '../components/Header';
-import SearchBox from '../components/SearchBox';
-import TopBots from '../components/TopBots';
+import Header from '../components/Global/Header';
+import SearchBox from '../components/home/SearchBox';
+import TopBots from '../components/home/TopBots';
 
 const Home = () => (
   <>

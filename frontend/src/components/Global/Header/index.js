@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
 import { FaChevronCircleDown } from 'react-icons/fa'
-import Colors from '../../assets/styles/Colors.json';
-import { loginURL } from '../../config.json';
+import Colors from '../../../assets/styles/Colors.json';
+import { loginURL } from '../../../config.json';
 
 // Elements, components, contexts, ands styles.
-import Logo from '../../assets/images/logo.svg';
+import Logo from '../../../assets/images/logo.svg';
 import DropdownMenu from '../DropdownMenu';
-import { useLoggedIn } from '../../hooks/LoggedIn';
+import { useLoggedIn } from '../../../hooks/LoggedIn';
 import { Container, HeaderLogo } from './styles';
 
 export default function Header() {
@@ -37,7 +37,7 @@ export default function Header() {
               color: Colors.dark_grey
             }}
             onClick={() => { setOpenDropdown(!openDropdown) }}/>
-        : <a href={loginURL}><button>login with Discord</button></a>
+        : <a href={loginURL}><button>login</button></a>
       }
 
     </Container>

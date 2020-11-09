@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import MyBotsHeader from '../components/MyBotsHeader';
+import Header from '../components/Global/Header';
+import MyBotsHeader from '../components/my-bots/Header';
 
 // Components
 

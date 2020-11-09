@@ -1,7 +1,7 @@
 import { FaPlus, FaSignOutAlt, FaThList } from 'react-icons/fa';
-import { logoutURL, myBotsURL } from '../../config.json';
+import { logoutURL, myBotsURL } from '../../../config.json';
 
-import Colors from '../../assets/styles/Colors.json';
+import Colors from '../../../assets/styles/Colors.json';
 
 const IconsSize = 25;
 export const ItemsValues = [

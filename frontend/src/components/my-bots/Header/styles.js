@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Colors from '../../assets/styles/Colors.json';
+import Colors from '../../../assets/styles/Colors.json';
 
 export const Container = styled.div`
   padding: 2% 15%;

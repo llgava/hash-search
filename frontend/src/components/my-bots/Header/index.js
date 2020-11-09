@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 
 export default function MyBotsHeader() {
-  return(
+  return (
     <Container>
       <div>
         <h1>My bots</h1>
