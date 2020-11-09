@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 function isLogged(req, res, next) {
   if (req.user) next();
-  else res.redirect('/auth');
+  else res.redirect('/login');
 }
 
 router.get('/', isLogged, (req, res) => {

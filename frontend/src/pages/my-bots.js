@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import MyBotsHeader from '../components/MyBotsHeader';
 
 // Components
 
@@ -7,6 +8,7 @@ import Header from '../components/Header';
 const MyBots = () => (
   <>
     <Header />
+    <MyBotsHeader />
   </>
 );
 

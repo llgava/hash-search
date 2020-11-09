@@ -47,7 +47,9 @@ passport.use(new Discord({
       const saveUser = await createUser.save();
       done(null, saveUser, CreateUser('created', profile.username, false));
     }
+
   } catch (err) {
     done(null, null, CreateUser('error', profile.username, false));
   }
 }));
+
