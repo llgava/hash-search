@@ -6,7 +6,7 @@ const BotSchema = new Mongoose.Schema({
   name: { type: String, require: true },
   description: { type: String, require: true },
   inviteURL: { type: String, require: true },
-  avatarURL: { type: String, require: false },
+  avatarURL: { type: String, require: false }
 }, { versionKey: false });
 
 const Bot = module.exports = Mongoose.model('Bot', BotSchema);

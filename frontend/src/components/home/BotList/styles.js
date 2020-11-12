@@ -10,7 +10,7 @@ const Container = styled.div`
 const BotFrame = styled.div`
   display: flex;
   justify-content: space-between;
-  max-height: 256px;
+  height: 224px;
 
   img {
     background-color: ${Colors.grey};
@@ -21,10 +21,17 @@ const BotFrame = styled.div`
   }
 
   h2 { margin-left: 15px; }
+  h3 { margin-right: 5px;}
+  span, h3 { transition: .5s ease-in-out; }
+  span:hover, span:hover > h3 { color: ${Colors.dark_blue}; }
 
-  span h3 {
-    margin-right: 15px;
-    float: right;
+  span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
   }
 
   p {
@@ -34,6 +41,7 @@ const BotFrame = styled.div`
   }
 
   div {
+    position: relative;
     border: 4px solid ${Colors.grey};
     border-radius: 10px;
     background-color: ${Colors.ice};

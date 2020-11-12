@@ -9,18 +9,7 @@ const UserSchema = new Mongoose.Schema({
   dsEmail: { type: String, required: true },
 
   // Website
-  wsRole: { type: String, required: true },
-
-  bots: [
-    {
-      clientId: { type: String, require: true, unique: true },
-      name: { type: String, require: true },
-      description: { type: String, require: true },
-      inviteURL: { type: String, require: true },
-      avatarURL: { type: String, require: false },
-    }
-  ]
-
+  wsRole: { type: String, required: true }
 }, { versionKey: false });
 
 const User = module.exports = Mongoose.model('User', UserSchema);

@@ -1,6 +1,8 @@
 import React from 'react';
-import { useBot } from '../../../hooks/Bot';
+import { FaPlusCircle } from 'react-icons/fa';
 
+// Elements (e.g: Components, hooks, images and videos).
+import { useBot } from '../../../hooks/Bot';
 import { Container, BotFrame } from './styles';
 
 function BotList() {
@@ -10,15 +12,18 @@ function BotList() {
     <Container>
       <BotFrame>
         {bot.map((valueOf, index) => {
-          return(
+          return (
             <div>
               <img src={valueOf.avatarURL} alt='Avatar of the bot' />
               <h2>{valueOf.name}</h2>
               <p>{valueOf.description}</p>
 
-              <span>
-                <h3>add bot</h3>
-              </span>
+              <a href={valueOf.inviteURL} target='_blank'>
+                <span>
+                  <h3>add bot</h3>
+                  <FaPlusCircle />
+                </span>
+              </a>
             </div>
           )
         })}
