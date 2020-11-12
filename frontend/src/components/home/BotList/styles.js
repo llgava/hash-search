@@ -14,15 +14,15 @@ const BotFrame = styled.div`
 
   img {
     background-color: ${Colors.grey};
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border-radius: 10px;
-    transform: translate(-15px, -15px);
+    transform: translate(-23px, -23px);
   }
 
   h2 { margin-left: 15px; }
   h3 { margin-right: 5px;}
-  span, h3 { transition: .5s ease-in-out; }
+  span, h3 { transition: .3s ease-in-out; }
   span:hover, span:hover > h3 { color: ${Colors.dark_blue}; }
 
   span {
@@ -42,7 +42,7 @@ const BotFrame = styled.div`
 
   div {
     position: relative;
-    border: 4px solid ${Colors.grey};
+    border: 3px solid ${Colors.grey};
     border-radius: 10px;
     background-color: ${Colors.ice};
     height: auto;

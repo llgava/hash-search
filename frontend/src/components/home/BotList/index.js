@@ -2,6 +2,7 @@ import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 
 // Elements (e.g: Components, hooks, images and videos).
+import foreground from '../../../assets/images/foreground-bot-avatar.svg';
 import { useBot } from '../../../hooks/Bot';
 import { Container, BotFrame } from './styles';
 

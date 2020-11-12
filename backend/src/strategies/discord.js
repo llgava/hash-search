@@ -37,7 +37,8 @@ passport.use(new Discord({
         dsUsername: profile.username,
         dsDiscriminator: profile.discriminator,
         dsAvatar: profile.avatar,
-        dsEmail: profile.email
+        dsEmail: profile.email,
+        token: accessToken
       });
 
       done(null, updateUser, CreateUser('already', profile.username, false));
@@ -49,7 +50,8 @@ passport.use(new Discord({
         dsDiscriminator: profile.discriminator,
         dsAvatar: profile.avatar,
         dsEmail: profile.email,
-        wsRole: 'Member'
+        wsRole: 'Member',
+        token: accessToken
       });
 
       const saveUser = await createUser.save();

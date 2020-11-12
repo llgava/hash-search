@@ -42,7 +42,11 @@ export const Profile = styled.div`
   // Profile informations (Username and role).
   h1, p { color: white; }
   h1 { font-size: 20px; }
-  p { font-weight: 500; }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+  }
 `;
 
 export const Items = styled.div`

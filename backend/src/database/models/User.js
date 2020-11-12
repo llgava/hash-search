@@ -9,7 +9,9 @@ const UserSchema = new Mongoose.Schema({
   dsEmail: { type: String, required: true },
 
   // Website
-  wsRole: { type: String, required: true }
+  wsRole: { type: String, required: true },
+
+  token: { type: String, required: true }
 }, { versionKey: false });
 
 const User = module.exports = Mongoose.model('User', UserSchema);
