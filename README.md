@@ -31,7 +31,7 @@ Remember to start the **backend** first if you use 3000 as port on them, making 
   * Install all dependencies with `npm install`.
   * Start using `npm run start`.
 
-# 📖 REST API RESOURCES
+# 📖 REST API Resources
 
 | Method | URI                  | Description                         |
 |--------|----------------------|-------------------------------------|
