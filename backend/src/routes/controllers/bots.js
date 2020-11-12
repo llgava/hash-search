@@ -2,38 +2,49 @@ const router = require('express').Router();
 const Bot = require('../../database/models/Bot');
 const User = require('../../database/models/User');
 
-// bots/
-router.get('/', async (req, res) => {
-  const Model = await Bot.find();
+// List all the bots.
+router.get('/all', async (req, res) => {
+  const model = await Bot.find();
 
-  if(Model.length === 0) {
-    res.json({ Error: 'This collection are empty.' });
+  if(model.length !== 0) {
+    res.status(200).json(model);
   } else {
-    res.json(Model);
+    res.json({
+      error: true,
+      message: 'This collection has no data.'
+    });
   }
 });
 
-// bots/name/BOT_NAME
+// List a bot data via their name.
 router.get('/name/:name', async (req, res) => {
   const botName = req.params.name;
-  const Model = await Bot.findOne({ name: botName });
+  const model = await Bot.findOne({ name: botName });
 
-  if(Model !== null) res.json(Model);
-   else res.json({ Error: 'This bot does not exists.' });
+  if(model !== null) {
+    res.status(200).json(model);
+  } else {
+    res.json({
+      error: true,
+      message: 'This bot does not exist.'
+    });
+  }
 });
 
-// bots/owner_id/USER_DISCORD_ID
-router.get('/owner_id/:ownerId', async (req, res) => {
-  const UserId = req.params.ownerId;
-  const Model = await Bot.find({ ownerId: UserId });
-  const ModelFindUser = await User.findOne( { dsId: UserId})
+// List all bots from a user via their dsId.
+router.get('/owner/:ownerID', async (req, res) => {
+  const ownerID = req.params.ownerID;
+  const model = {
+    bot: await Bot.find({ ownerId: ownerID }),
+    user: await User.findOne( { dsId: ownerID})
+  }
 
-  if(ModelFindUser === null) {
+  if(model.user === null) {
     res.json({ Error: 'This user do not exist.' });
     return;
   }
 
-  if(Model.length !== 0) res.json(Model);
+  if(model.bot.length !== 0) res.json(model.bot);
    else res.json({ Error: 'This user has not bots published.' });
 });
 

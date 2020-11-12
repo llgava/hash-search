@@ -7,12 +7,7 @@
     ".gitignore": true,
     "LICENSE": true,
     "package-lock.json": true,
-    "README.md": true,
-
-    // Not used or edited anymore
-    "**/fonts/": true,
-    "**/images/": false,
-    "**/public/": true
+    "README.md": true
   },
 
   "[javascript]": {
