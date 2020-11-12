@@ -1,43 +1,29 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// Pages component
 import Home from './pages/home';
-import MyBots from './pages/my-bots';
-import AddBot from './pages/add-bot';
-import AccountSettings from './pages/account-settings';
 
-import { useLoggedIn } from './hooks/LoggedIn';
+// Hooks
+//import { useLoggedIn } from './hooks/LoggedIn';
 
 export default function Routes() {
-  const { loggedIn } = useLoggedIn();
+  //const { loggedIn } = useLoggedIn();
 
-  let authComponents = {
-    myBots: undefined,
-    addBot: undefined,
-    accountSettings: undefined
-  }
+  // E.g: myBots: undefined
+  //let authComponents = {}
 
   // If the user are logged in, certain component will be rendered as page component.
-  if(loggedIn) {
-    authComponents = {
-      myBots: MyBots,
-      addBot: AddBot,
-      accountSettings: AccountSettings
-    }
+  /* if(loggedIn) {
+    authComponents = {}
   } else {
-    authComponents = {
-      myBots: Home,
-      addBot: Home,
-      accountSettings: Home
-    }
-  }
+    authComponents = {}
+  } */
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={['/', '/home']} component={Home} />
-        <Route exact path='/my-bots' component={authComponents.myBots} />
-        <Route exact path='/account-settings' component={authComponents.accountSettings} />
+        <Route exact path={['/', '/home', '/index']} component={Home} />
       </Switch>
     </BrowserRouter>
   );

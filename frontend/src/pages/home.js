@@ -2,14 +2,14 @@ import React from 'react';
 
 // Components
 import Header from '../components/Global/Header';
-import SearchBox from '../components/home/SearchBox';
-import TopBots from '../components/home/TopBots';
+import BotList from '../components/home/BotList';
+import Message from '../components/home/Message';
 
 const Home = () => (
   <>
     <Header />
-    <SearchBox />
-    <TopBots />
+    <Message />
+    <BotList />
   </>
 );
 

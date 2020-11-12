@@ -1,21 +1,26 @@
 import React from 'react';
 
 import Routes from './routes';
-import { GlobalStyle } from './assets/styles/GlobalStyle';
 
 // Providers
 import LoggedInProvider from './hooks/LoggedIn';
 import UserProvider from './hooks/User';
 import StaffProvider from './hooks/Staff';
 
+// Global Styles
+import GlobalStyles from './components/GlobalStyle';
+import BotProvider from './hooks/Bot';
+
 const App = () => (
   <UserProvider>
-    <LoggedInProvider>
-      <StaffProvider>
-        <Routes />
-        <GlobalStyle />
-      </StaffProvider>
-    </LoggedInProvider>
+    <BotProvider>
+      <LoggedInProvider>
+        <StaffProvider>
+          <Routes />
+          <GlobalStyles />
+        </StaffProvider>
+      </LoggedInProvider>
+    </BotProvider>
   </UserProvider>
 );
 

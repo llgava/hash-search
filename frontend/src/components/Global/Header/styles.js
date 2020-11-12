@@ -6,7 +6,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 3% 15%;
+  padding: 3% 0;
   background-color: white;
 
   // Navigation
@@ -20,12 +20,11 @@ export const Container = styled.header`
 
   // Login Button
   button {
-    padding: 0px 0 0 15px;
+    width: auto;
     background: transparent;
     color: ${Colors.dark_blue};
     text-decoration: underline;
     border: none;
-    border-radius: 50px;
     cursor: pointer;
   }
 
