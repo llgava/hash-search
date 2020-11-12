@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import fetch from 'node-fetch';
 
 const UserContext = createContext();
 

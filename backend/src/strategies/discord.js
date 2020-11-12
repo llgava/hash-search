@@ -31,8 +31,16 @@ passport.use(new Discord({
     const findUser = await User.findOne({ dsId: profile.id });
 
     // Will check if the User exists, if not, it will be created.
-    if (findUser) {
-      done(null, findUser, CreateUser('already', profile.username, false));
+    if(findUser) {
+      const updateUser = await User.findOneAndUpdate({ dsId: profile.id }, {
+        dsId: profile.id,
+        dsUsername: profile.username,
+        dsDiscriminator: profile.discriminator,
+        dsAvatar: profile.avatar,
+        dsEmail: profile.email
+      });
+
+      done(null, updateUser, CreateUser('already', profile.username, false));
 
     } else {
       const createUser = await User.create({
@@ -41,8 +49,7 @@ passport.use(new Discord({
         dsDiscriminator: profile.discriminator,
         dsAvatar: profile.avatar,
         dsEmail: profile.email,
-        wsRole: 'Member',
-        bots: []
+        wsRole: 'Member'
       });
 
       const saveUser = await createUser.save();

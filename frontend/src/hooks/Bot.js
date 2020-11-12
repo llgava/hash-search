@@ -7,7 +7,7 @@ export default function BotProvider({ children }) {
   const [bot, setBot] = useState([]);
 
   useEffect(async () => {
-    const BotFetch = await fetch('/bots');
+    const BotFetch = await fetch('/bots/all');
     const BotData = await BotFetch.json();
 
     setBot(BotData); // Array[{...}]

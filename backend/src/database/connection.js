@@ -11,5 +11,6 @@ const Config = {
 module.exports = Mongoose.connect(`mongodb+srv://${Config.username}:${Config.password}@hashsearch.hdcwy.mongodb.net/${Config.database}?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useFindAndModify: false
 });

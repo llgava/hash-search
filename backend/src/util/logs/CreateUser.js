@@ -18,7 +18,7 @@ function CreateUser(type, username, disabled) {
         break;
 
       case 'already':
-        console.log(`${chalk.bold.yellow(chars.proceeding)} The user ${chalk.bold(username)} is already registered in the database. \n  Ignoring registration and proceeding for authentication.\n`);
+        console.log(`${chalk.bold.yellow(chars.proceeding)} The user ${chalk.bold(username)} is already registered in the database. \n  Ignoring registration and proceeding to update.\n`);
         break;
 
       default:
