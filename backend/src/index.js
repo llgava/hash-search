@@ -4,7 +4,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const DiscordStrategy = require('./strategies/Discord');
-const { Bots, Login, Logout, Me, Test } = require('./routes');
+const { Bots, Login, Logout, Me } = require('./routes');
 const { Start } = require('./util/logs')
 
 const App = express();
@@ -29,7 +29,6 @@ App.use('/bots', Bots);
 App.use('/login', Login);
 App.use('/logout', Logout);
 App.use('/me', Me);
-App.use('/test', Test)
 
 // App start
 App.listen(Port, () => Start());
