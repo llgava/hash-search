@@ -8,8 +8,6 @@ import { Container, BotFrame } from './styles';
 function BotList() {
   const { bot } = useBot();
 
-
-
   return (
     <Container>
       <BotFrame>

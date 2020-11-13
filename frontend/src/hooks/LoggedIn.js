@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+// Elements (e.g: Components, hooks, images and videos).
 import { useUser } from './User';
 
 const LoggedInContext = createContext();
@@ -15,10 +15,7 @@ export default function LoggedInProvider({ children }) {
 
   return (
     <LoggedInContext.Provider
-      value={{
-        loggedIn,
-        setLoggedIn
-      }}
+      value={{ loggedIn, setLoggedIn }}
     >
       {children}
     </LoggedInContext.Provider>

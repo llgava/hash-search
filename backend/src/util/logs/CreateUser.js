@@ -4,7 +4,7 @@ const chars = { success: '✔', error: '✖', proceeding: '↪' }
 
 function CreateUser(type, username, disabled) {
   // ========= REMOVE WHEN THE APPLICATION ARE FINISHED =========
-  //                        disabled = true
+                          disabled = true
   // ============================================================
 
   if(!disabled) {
