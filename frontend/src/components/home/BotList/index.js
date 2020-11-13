@@ -12,13 +12,15 @@ function BotList() {
     <Container>
       <BotFrame>
         {bot.map((valueOf, index) => {
+          const avatar = `https://cdn.discordapp.com/avatars/${valueOf.client_id}/${valueOf.avatar}`
+
           return (
             <div>
-              <img src={valueOf.avatarURL} alt='Avatar of the bot' />
+              <img src={avatar} alt='Avatar of the bot' />
               <h2>{valueOf.name}</h2>
               <p>{valueOf.description}</p>
 
-              <a href={valueOf.inviteURL} target='_blank' rel='noreferrer'>
+              <a href={valueOf.invite_url} target='_blank' rel='noreferrer'>
                 <span>
                   <h3>add bot</h3>
                   <FaPlusCircle />

@@ -3,5 +3,6 @@
   "logoutURL": "http://localhost:3000/logout",
 
   "myBotsURL": "/my-bots",
+  "addBotURL": "/add-bot",
   "accountSettingsURL": "/account-settings"
 }

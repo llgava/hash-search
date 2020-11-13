@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const fetch = require('node-fetch');
 const Bot = require('../../database/models/Bot');
 const User = require('../../database/models/User');
 
-// List all the bots.
+/* GET all the bots */
 router.get('/all', async (req, res) => {
   const model = await Bot.find();
 
@@ -16,7 +17,7 @@ router.get('/all', async (req, res) => {
   }
 });
 
-// List a bot data via their name.
+/* GET bot by their name */
 router.get('/name/:name', async (req, res) => {
   const botName = req.params.name;
   const model = await Bot.findOne({ name: botName });
@@ -31,11 +32,11 @@ router.get('/name/:name', async (req, res) => {
   }
 });
 
-// List all bots from a user via their dsId.
+/* GET bots by their owner_id */
 router.get('/owner/:ownerID', async (req, res) => {
   const ownerID = req.params.ownerID;
   const model = {
-    bot: await Bot.find({ ownerId: ownerID }),
+    bot: await Bot.find({ owner_id: ownerID }),
     user: await User.findOne( { dsId: ownerID})
   }
 
@@ -45,7 +46,38 @@ router.get('/owner/:ownerID', async (req, res) => {
   }
 
   if(model.bot.length !== 0) res.json(model.bot);
-   else res.json({ Error: 'This user has not bots published.' });
+  else res.json({ Error: 'This user has not bots published.' });
 });
+
+/* POST a new bot */
+router.post('/register', async (req, res) => {
+  const base_url = 'https://discord.com/api/v8/users/';
+
+  const owner_id = req.user.dsId;
+  const client_id = req.body.client_id;
+  const name = req.body.name;
+  const description = req.body.description;
+  const invite_url = req.body.invite_url;
+
+  const bot_client = await fetch(`${base_url}${client_id}`, {
+    headers: {
+      'Authorization': `Bot ${process.env.BOT_TOKEN}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  });
+  const bot_data = await bot_client.json();
+  const avatar = bot_data.avatar;
+
+  const CreateBot = await Bot.create({
+    owner_id: owner_id,
+    client_id: client_id,
+    name: name,
+    description: description,
+    avatar: avatar,
+    invite_url: invite_url
+  });
+
+  CreateBot.save();
+})
 
 module.exports = router;
