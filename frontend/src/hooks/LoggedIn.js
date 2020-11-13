@@ -6,8 +6,8 @@ import { useUser } from './User';
 const LoggedInContext = createContext();
 
 export default function LoggedInProvider({ children }) {
-  const { user } = useUser();
   const [loggedIn, setLoggedIn] = useState(false);
+  const { user } = useUser();
 
   useEffect(() => {
     if (user.length !== 0) setLoggedIn(true);

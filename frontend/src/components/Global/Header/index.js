@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
-import { FaChevronCircleDown } from 'react-icons/fa'
-import Colors from '../../../assets/styles/Colors.json';
-import { loginURL } from '../../../config.json';
+import { FaChevronCircleDown } from 'react-icons/fa';
 
-// Elements, components, contexts, ands styles.
-import Logo from '../../../assets/images/logo.svg';
+// Elements (e.g: Components, hooks, images and videos).
+import Colors from '../../../assets/styles/Colors.json';
 import DropdownMenu from '../DropdownMenu';
-import { useLoggedIn } from '../../../hooks/LoggedIn';
+import Logo from '../../../assets/images/logo.svg';
 import { Container, HeaderLogo } from './styles';
+import { loginURL } from '../../../config.json';
+import { useLoggedIn } from '../../../hooks/LoggedIn';
 
 export default function Header() {
   const { loggedIn } = useLoggedIn();
@@ -39,7 +39,6 @@ export default function Header() {
             onClick={() => { setOpenDropdown(!openDropdown) }}/>
         : <a href={loginURL}><button>login with discord</button></a>
       }
-
     </Container>
   )
 }

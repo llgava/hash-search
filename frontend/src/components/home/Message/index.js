@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Style
+// Elements (e.g: Components, hooks, images and videos).
 import { Container } from './styles';
 
 export default class Message extends React.Component {

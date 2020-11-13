@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+// Elements (e.g: Components, hooks, images and videos).
 import Colors from '../../../assets/styles/Colors.json';
 
-export const Container = styled.header`
+const Container = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -31,8 +32,10 @@ export const Container = styled.header`
   a button:hover { color: ${Colors.blue}; }
 `;
 
-export const HeaderLogo = styled.img`
+const HeaderLogo = styled.img`
   width: 356px;
   height: auto;
   margin-right: auto;
 `;
+
+export { Container, HeaderLogo };

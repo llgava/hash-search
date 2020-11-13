@@ -1,10 +1,11 @@
 import { FaPlus, FaSignOutAlt, FaThList } from 'react-icons/fa';
+
+// Elements (e.g: Components, hooks, images and videos).
+import Colors from '../../../assets/styles/Colors.json';
 import { logoutURL, myBotsURL } from '../../../config.json';
 
-import Colors from '../../../assets/styles/Colors.json';
-
 const IconsSize = 25;
-export const ItemsValues = [
+const ItemsValue = [
   {
     event: myBotsURL,
     icon: <FaThList size={IconsSize} color={Colors.dark_grey} />,
@@ -30,3 +31,5 @@ export const ItemsValues = [
     }
   }
 ]
+
+export { ItemsValue };

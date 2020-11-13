@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
-import Colors from '../../../assets/styles/Colors.json';
-
-// Backgrounds
+// Elements (e.g: Components, hooks, images and videos).
 import BG0 from '../../../assets/images/background-profile-0.png';
 import BG1 from '../../../assets/images/background-profile-1.png';
 import BG2 from '../../../assets/images/background-profile-2.png';
 import BG3 from '../../../assets/images/background-profile-3.png';
+import Colors from '../../../assets/styles/Colors.json';
 
 // A random Background selector.
 const BackgroundProfile = [BG0, BG1, BG2, BG3]
 const Selector = Math.floor(Math.random() * BackgroundProfile.length);
 
-export const Container = styled.div`
+const Container = styled.div`
   position: absolute;
   top: 125px;
   right: 150px;
@@ -22,7 +21,7 @@ export const Container = styled.div`
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 `;
 
-export const Profile = styled.div`
+const Profile = styled.div`
   background-image: url(${BackgroundProfile[Selector]});
   background-color: ${Colors.dark_blue};
   padding: 15px;
@@ -49,13 +48,13 @@ export const Profile = styled.div`
   }
 `;
 
-export const Items = styled.div`
+const Items = styled.div`
   padding: 10px;
   border-radius: 0 0 15px 15px;
   background-color: ${Colors.ice};
 `;
 
-export const Item = styled.div`
+const Item = styled.div`
   padding: 10px;
   display: flex;
   align-items: center;
@@ -69,3 +68,5 @@ export const Item = styled.div`
     margin-left: 15px;
   }
 `;
+
+export { Container, Profile, Items, Item };

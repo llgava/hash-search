@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
+
+// Elements (e.g: Components, hooks, images and videos).
 import { Container, Profile, Items, Item } from './styles';
 import { useUser } from '../../../hooks/User';
-import { ItemsValues } from './ItemsValues';
+import { ItemsValue } from './ItemsValue';
 
 export default function DropdownMenu() {
   const { user } = useUser();
@@ -19,13 +21,13 @@ export default function DropdownMenu() {
       </Profile>
 
       <Items>
-        {/* Map all the objects on ItemsValues */}
-        {ItemsValues.map((menuItem, index) => {
+        {/* Map all the objects on ItemsValue */}
+        {ItemsValue.map((item, index) => {
           return (
-            <a href={menuItem.event}>
+            <a href={item.event}>
             <Item>
-              {menuItem.icon}
-              <h1 style={{ color: menuItem.label.color }}>{menuItem.label.text}</h1>
+                {item.icon}
+                <h1 style={{ color: item.label.color }}>{item.label.text}</h1>
             </Item>
             </a>
           )

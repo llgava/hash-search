@@ -1,24 +1,18 @@
 import React from 'react';
 
-import Routes from './routes';
-
-// Providers
+// Elements (e.g: Components, hooks, images and videos).
+import GlobalStyles from './components/GlobalStyle';
 import LoggedInProvider from './hooks/LoggedIn';
 import UserProvider from './hooks/User';
-import StaffProvider from './hooks/Staff';
-
-// Global Styles
-import GlobalStyles from './components/GlobalStyle';
 import BotProvider from './hooks/Bot';
+import Routes from './routes';
 
 const App = () => (
   <UserProvider>
     <BotProvider>
       <LoggedInProvider>
-        <StaffProvider>
           <Routes />
           <GlobalStyles />
-        </StaffProvider>
       </LoggedInProvider>
     </BotProvider>
   </UserProvider>
