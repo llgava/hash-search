@@ -8,7 +8,7 @@ const Container = styled.div`
   text-align: center;
 
   span {
-    color: ${Colors.pink};
+    color: ${Colors.blue};
     font-size: 40px;
     font-family: 'Gilroy', sans-serif;
   }

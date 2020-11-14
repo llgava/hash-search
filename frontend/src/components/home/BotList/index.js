@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaPlusCircle } from 'react-icons/fa';
 
 // Elements (e.g: Components, hooks, images and videos).
 import { useBot } from '../../../hooks/Bot';
@@ -11,22 +10,18 @@ function BotList() {
   return (
     <Container>
       <BotFrame>
-        {bot.map((valueOf, index) => {
-          const avatar = `https://cdn.discordapp.com/avatars/${valueOf.client_id}/${valueOf.avatar}`
+        {bot.map((valueOf) => {
+          const base_url = 'https://cdn.discordapp.com/avatars/';
+          const avatar_url = `${base_url}${valueOf.client_id}/${valueOf.avatar}`;
 
           return (
-            <div>
-              <img src={avatar} alt='Avatar of the bot' />
-              <h2>{valueOf.name}</h2>
-              <p>{valueOf.description}</p>
-
-              <a href={valueOf.invite_url} target='_blank' rel='noreferrer'>
-                <span>
-                  <h3>add bot</h3>
-                  <FaPlusCircle />
-                </span>
-              </a>
-            </div>
+            <a href={valueOf.invite_url} target='_blank' rel='noreferrer'>
+              <div>
+                <img src={avatar_url} alt='Avatar' />
+                <h2>{valueOf.name}</h2>
+                <p>{valueOf.description}</p>
+              </div>
+            </a>
           )
         })}
       </BotFrame>

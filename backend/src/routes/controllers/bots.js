@@ -74,4 +74,24 @@ router.post('/register', async (req, res) => {
   CreateBot.save();
 });
 
+/* DELETE bot via _id */
+router.get('/delete/:_id', async (req, res) => {
+  const id = req.params._id;
+  const FindBot = await Bot.findById(id);
+
+  if(FindBot) {
+    FindBot.deleteOne();
+    res.status(200).json({
+      error: false,
+      message: 'The bot has been deleted.'
+    })
+  } else {
+    res.json({
+      error: true,
+      message: 'This bot does not exist.'
+    });
+  }
+
+});
+
 module.exports = router;

@@ -15,4 +15,8 @@ export const Texts = createGlobalStyle`
   p, h1, h2, h3, h4, h5, h6, a, span { color: ${Colors.dark_grey}; }
   p, span { font-family: 'OpenSans', sans-serif; }
   p, span, button, input { font-size: 20px; }
+
+  :focus {
+    outline-style: none
+  }
 `;

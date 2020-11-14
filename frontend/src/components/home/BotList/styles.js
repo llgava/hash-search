@@ -4,55 +4,49 @@ import styled from 'styled-components';
 import Colors from '../../../assets/styles/Colors.json';
 
 const Container = styled.div`
-  width: 100%;
   height: 50px;
+  width: 100%;
 `;
 
 const BotFrame = styled.div`
   display: flex;
+  flex-direction: row;
+  height: 172px;
   justify-content: space-between;
-  height: 224px;
 
-  img {
-    background-color: ${Colors.grey};
-    width: 72px;
-    height: 72px;
+  a:nth-child(1) > div { margin-left: 0; }
+  a:nth-child(4) > div { margin-right: 0; }
+
+  div {
+    background-color: ${Colors.ice};
     border-radius: 10px;
-    transform: translate(-23px, -23px);
+    border-top: 4px solid ${Colors.blue};
+    box-shadow: 10px 10px 0px 0px ${Colors.light_grey};
+    padding: 15px;
+    transition: .3s ease-in-out;
+    width: calc(320px - 30px);
+    margin: 0 30px;
   }
 
-  h2 { margin-left: 15px; }
-  h3 { margin-right: 5px;}
-  span, h3 { transition: .3s ease-in-out; }
-  span:hover, span:hover > h3 { color: ${Colors.dark_blue}; }
+  div:hover { transform: translateY(-10px); }
 
-  span {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+  img {
+    border-radius: 10px;
+    width: 72px;
+    height: auto;
+    transform: translate(-32px, -32px);
+    background-color: ${Colors.ice};
+  }
+
+  h2 {
+    margin: -72px 0 15px 0;
+    text-align: center;
   }
 
   p {
-    margin: 0 15px 15px 15px;
-    text-align: justify;
     font-size: 14px;
+    text-align: justify;
   }
-
-  div {
-    position: relative;
-    border: 3px solid ${Colors.grey};
-    border-radius: 10px;
-    background-color: ${Colors.ice};
-    height: auto;
-    width: 320px;
-    box-shadow: 10px 10px 0px 0px #E1E5E6;
-    transition: .3s ease-in-out;
-  }
-
-  div:hover {  transform: translateY(-10px); }
 `;
 
 export { Container, BotFrame };
