@@ -13,7 +13,9 @@ function AddBotForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <img src={Background} alt='teste' />
+      <div>
+        <img src={Background} alt='teste' />
+      </div>
 
       <InputGroup>
         <span>Client ID</span>
