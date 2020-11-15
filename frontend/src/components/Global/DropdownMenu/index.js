@@ -8,15 +8,15 @@ import { ItemsValue } from './ItemsValue';
 
 export default function DropdownMenu() {
   const { user } = useUser();
-  const Avatar = `https://cdn.discordapp.com/avatars/${user.dsId}/${user.dsAvatar}` // BaseURL + User ID + User Avatar
+  const Avatar = `https://cdn.discordapp.com/avatars/${user.discord_id}/${user.discord_avatar}` // BaseURL + User ID + User Avatar
 
   return (
     <Container>
       <Profile>
         <img src={Avatar} alt='User avatar' />
         <div>
-          <h1>{user.dsUsername}</h1>
-          <p>{user.wsRole}</p>
+          <h1>{user.discord_username}</h1>
+          <p>{user.website_role}</p>
         </div>
       </Profile>
 
