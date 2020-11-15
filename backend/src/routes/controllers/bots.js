@@ -63,7 +63,7 @@ router.post('/register', async (req, res) => {
   const client_data = await fetch_client.json();
 
   const CreateBot = await Bot.create({
-    owner_id: req.user.dsId,
+    owner_id: req.user.discord_id,
     name: req.body.name,
     description: req.body.description,
     invite_url: req.body.invite_url,
@@ -75,9 +75,9 @@ router.post('/register', async (req, res) => {
 });
 
 /* DELETE bot via _id */
-router.get('/delete/:_id', async (req, res) => {
-  const id = req.params._id;
-  const FindBot = await Bot.findById(id);
+router.get('/delete/:uuid', async (req, res) => {
+  const uuid = req.params.uuid;
+  const FindBot = await Bot.findOne({ uuid: uuid });
 
   if(FindBot) {
     FindBot.deleteOne();
@@ -91,7 +91,6 @@ router.get('/delete/:_id', async (req, res) => {
       message: 'This bot does not exist.'
     });
   }
-
 });
 
 module.exports = router;

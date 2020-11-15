@@ -2,16 +2,14 @@ const Mongoose = require('mongoose');
 
 const UserSchema = new Mongoose.Schema({
   // Discord
-  dsId: { type: String, require: true },
-  dsUsername: { type: String, require: true },
-  dsDiscriminator: { type: String, require: true },
-  dsAvatar: { type: String, require: true },
-  dsEmail: { type: String, required: true },
+  discord_id: { type: String, require: true },
+  discord_username: { type: String, require: true },
+  discord_discrimator: { type: String, require: true },
+  discord_avatar: { type: String, require: true },
+  discord_email: { type: String, required: true },
 
   // Website
-  wsRole: { type: String, required: true },
-
-  token: { type: String, required: true }
+  website_role: { type: String, default: 'Member', required: true }
 }, { versionKey: false });
 
 const User = module.exports = Mongoose.model('User', UserSchema);

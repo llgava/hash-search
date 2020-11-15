@@ -20,9 +20,9 @@ const Form = styled(Unform)`
   div:first-child { height: 0px; }
 
   img {
-    width: 128px;
+    width: 228px;
     height: auto;
-    margin-left: calc(100% - 128px);
+    margin-left: calc(100% - 228px);
     transform: translateY(-176px);
   }
 

@@ -28,30 +28,27 @@ passport.use(new Discord({
   scope: Config.scopes
 }, async (accessToken, refreshToken, profile, done) => {
   try {
-    const findUser = await User.findOne({ dsId: profile.id });
+    const findUser = await User.findOne({ discord_id: profile.id });
 
     // Will check if the User exists, if not, it will be created.
     if(findUser) {
-      const updateUser = await User.findOneAndUpdate({ dsId: profile.id }, {
-        dsId: profile.id,
-        dsUsername: profile.username,
-        dsDiscriminator: profile.discriminator,
-        dsAvatar: profile.avatar,
-        dsEmail: profile.email,
-        token: accessToken
+      const updateUser = await User.findOneAndUpdate({ discord_id: profile.id }, {
+        discord_id: profile.id,
+        discord_username: profile.username,
+        discord_discrimator: profile.discriminator,
+        discord_avatar: profile.avatar,
+        discord_email: profile.email
       });
 
       done(null, updateUser, CreateUser('already', profile.username, false));
 
     } else {
       const createUser = await User.create({
-        dsId: profile.id,
-        dsUsername: profile.username,
-        dsDiscriminator: profile.discriminator,
-        dsAvatar: profile.avatar,
-        dsEmail: profile.email,
-        wsRole: 'Member',
-        token: accessToken
+        discord_id: profile.id,
+        discord_username: profile.username,
+        discord_discrimator: profile.discriminator,
+        discord_avatar: profile.avatar,
+        discord_email: profile.email
       });
 
       const saveUser = await createUser.save();
@@ -59,7 +56,7 @@ passport.use(new Discord({
     }
 
   } catch (err) {
-    done(null, null, CreateUser('error', profile.username, false));
+    done(err, null);
   }
 }));
 

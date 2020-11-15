@@ -4,11 +4,11 @@ import axios from 'axios';
 // Elements (e.g: Components, hooks, images and videos).
 import { Form, InputGroup } from './styles';
 import Input from './@unform/input';
-import Background from '../../../assets/images/background-add-bot/0.svg';
+import Background from '../../../assets/images/background-add-bot.svg';
 
 function AddBotForm() {
   function handleSubmit(data) {
-    axios.post('/bots/register', data).then(() => console.log(data));
+    axios.post('/bots/register', data);
   }
 
   return (
@@ -37,7 +37,7 @@ function AddBotForm() {
         <Input type='url' name="invite_url" required={true} />
       </InputGroup>
 
-      <button type="submit">add bot</button>
+      <button type="submit" >add bot</button>
     </Form>
   );
 }

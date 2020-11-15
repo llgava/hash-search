@@ -17,6 +17,7 @@ function BotList() {
           return (
             <a href={valueOf.invite_url} target='_blank' rel='noreferrer'>
               <div>
+
                 <img src={avatar_url} alt='Avatar' />
                 <h2>{valueOf.name}</h2>
                 <p>{valueOf.description}</p>

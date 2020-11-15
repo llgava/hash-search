@@ -33,11 +33,13 @@ Remember to start the **backend** first if you use 3000 as port on them, making 
 
 # 📖 REST API Resources
 
-| Method | URI                  | Description                         |
-|--------|----------------------|-------------------------------------|
-| GET    | /all                 | List all the bots from database\.   |
-| GET    | /name/\{bot\_name\}  | List a single bot by his name\.     |
-| GET    | /owner/\{owner\_id\} | List all the bots by his owner ID\. |
+| Method | URI                       | Description                         |
+|--------|---------------------------|-------------------------------------|
+| GET    | /bots/all                 | List all the bots from database\.   |
+| GET    | /bots/name/\{bot\_name\}  | List a bot by his name\.            |
+| GET    | /bots/owner/\{owner\_id\} | List all the bots by his owner ID\. |
+| GET    | /bots/delete/\{id}        | Delete a bot by his ID\.            |
+| GET    | /bots/update/\{id\}       | Update a bot by his ID\.            |
 
 ## Contact
 
