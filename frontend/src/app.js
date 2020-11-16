@@ -6,14 +6,17 @@ import LoggedInProvider from './hooks/LoggedIn';
 import UserProvider from './hooks/User';
 import BotProvider from './hooks/Bot';
 import Routes from './routes';
+import BotByOwnerProvider from './hooks/BotByOwner';
 
 const App = () => (
   <UserProvider>
     <BotProvider>
-      <LoggedInProvider>
+      <BotByOwnerProvider>
+        <LoggedInProvider>
           <Routes />
           <GlobalStyles />
-      </LoggedInProvider>
+        </LoggedInProvider>
+      </BotByOwnerProvider>
     </BotProvider>
   </UserProvider>
 );
