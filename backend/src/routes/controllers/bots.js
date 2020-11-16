@@ -37,7 +37,7 @@ router.get('/owner/:ownerID', async (req, res) => {
   const ownerID = req.params.ownerID;
   const model = {
     bot: await Bot.find({ owner_id: ownerID }),
-    user: await User.findOne({ dsId: ownerID })
+    user: await User.findOne({ discord_id: ownerID })
   }
 
   if (model.user === null) {
