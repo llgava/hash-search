@@ -25,6 +25,7 @@ const BotFrame = styled.div`
     padding: 15px;
     transition: .3s ease-in-out;
     width: calc(320px - 30px);
+    height: 112px;
     margin: 0 30px;
   }
 

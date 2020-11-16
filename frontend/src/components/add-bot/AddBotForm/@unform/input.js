@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
-function Input({ name, required, placeholder, ...rest }) {
+function Textarea({ name, required, placeholder, ...rest }) {
   const inputRef = useRef(null);
   const { fieldName, registerField } = useField(name);
 
@@ -18,4 +18,4 @@ function Input({ name, required, placeholder, ...rest }) {
   );
 }
 
-export default Input;
+export default Textarea;

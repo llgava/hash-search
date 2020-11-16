@@ -7,8 +7,11 @@ import Input from './@unform/input';
 import Background from '../../../assets/images/background-add-bot.svg';
 
 function AddBotForm() {
+
   function handleSubmit(data) {
-    axios.post('/bots/register', data);
+    axios.post('/bots/register', data).then((res) => {
+      window.location('/home')
+    });
   }
 
   return (
@@ -37,7 +40,7 @@ function AddBotForm() {
         <Input type='url' name="invite_url" required={true} />
       </InputGroup>
 
-      <button type="submit" >add bot</button>
+      <button type="submit">add bot</button>
     </Form>
   );
 }
