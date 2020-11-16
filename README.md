@@ -35,11 +35,12 @@ Remember to start the **backend** first if you use 3000 as port on them, making 
 
 | Method | URI                       | Description                         |
 |--------|---------------------------|-------------------------------------|
+| POST   | /bots/register            | Register a new bot on database\.    |
 | GET    | /bots/all                 | List all the bots from database\.   |
 | GET    | /bots/name/\{bot\_name\}  | List a bot by his name\.            |
 | GET    | /bots/owner/\{owner\_id\} | List all the bots by his owner ID\. |
-| GET    | /bots/delete/\{id}        | Delete a bot by his ID\.            |
-| GET    | /bots/update/\{id\}       | Update a bot by his ID\.            |
+| PUT    | /bots/update/\{id\}       | Update a bot by his ID\.            |
+| DELETE | /bots/delete/\{id}        | Delete a bot by his ID\.            |
 
 ## Contact
 
