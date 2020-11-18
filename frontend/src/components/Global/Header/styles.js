@@ -8,6 +8,7 @@ const Container = styled.header`
   justify-content: flex-end;
   align-items: center;
   padding: 3% 0;
+  margin-bottom: 100px;
   background-color: white;
 
   // Navigation

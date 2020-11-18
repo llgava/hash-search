@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import Colors from '../../../assets/styles/Colors.json';
 
+const Container = styled.div`
+  h2 { margin-bottom: 45px; }
+`;
+
 const BotFrame = styled.div`
   display: flex;
   flex-direction: row;
@@ -23,6 +27,8 @@ const BotFrame = styled.div`
     margin: 0 30px;
   }
 
+  div:first-child { margin-left: 0; }
+  div:last-child { margin-right: 0; }
   div:hover { transform: translateY(-10px); }
 
   img {
@@ -44,4 +50,4 @@ const BotFrame = styled.div`
   }
 `;
 
-export { BotFrame };
+export { Container, BotFrame };
